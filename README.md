@@ -2,7 +2,7 @@
 
 **[Live Demo](https://danielcarmingham.github.io/LiquidLightShow/)**
 
-![Liquid Light Show Preview](samples/preview.gif)
+![Liquid Light Show Preview](preview.gif)
 
 A web-based recreation of [1970s psychedelic liquid light shows](./liquid-lightshow-description.md) — those mesmerizing concert visuals created with overhead projectors, colored oils, and glass dishes.
 
