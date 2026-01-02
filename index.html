@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Liquid Light Show - 70s Psychedelic Visual Experience" />
+    <title>Liquid Light Show</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html, body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+        touch-action: none;
+      }
+
+      #app {
+        width: 100%;
+        height: 100%;
+      }
+
+      canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      #help-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.85);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        z-index: 100;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      #help-overlay.visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .help-content {
+        max-width: 500px;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .help-content h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .help-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1rem 0;
+      }
+
+      .help-content td {
+        padding: 0.5rem;
+        text-align: left;
+      }
+
+      .help-content td:first-child {
+        font-family: monospace;
+        color: #feca57;
+        width: 100px;
+      }
+
+      .help-content p {
+        color: #888;
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+      }
+
+      #status {
+        position: fixed;
+        bottom: 1rem;
+        left: 1rem;
+        color: rgba(255, 255, 255, 0.5);
+        font-family: monospace;
+        font-size: 0.75rem;
+        z-index: 50;
+        pointer-events: none;
+      }
+
+      #mic-indicator {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #333;
+        z-index: 50;
+        transition: background 0.3s ease;
+      }
+
+      #mic-indicator.active {
+        background: #ff6b6b;
+        box-shadow: 0 0 10px #ff6b6b;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <div id="help-overlay">
+      <div class="help-content">
+        <h1>Liquid Light Show</h1>
+        <table>
+          <tr><td>Mouse/Touch</td><td>Swirl the liquid</td></tr>
+          <tr><td>1-9</td><td>Change color palette</td></tr>
+          <tr><td>Space</td><td>Toggle auto-animation</td></tr>
+          <tr><td>M</td><td>Toggle microphone</td></tr>
+          <tr><td>+/-</td><td>Adjust speed</td></tr>
+          <tr><td>R</td><td>Reset simulation</td></tr>
+          <tr><td>F</td><td>Toggle fullscreen</td></tr>
+          <tr><td>H</td><td>Show/hide this help</td></tr>
+        </table>
+        <p>Press H or click anywhere to start</p>
+      </div>
+    </div>
+
+    <div id="mic-indicator" title="Microphone"></div>
+    <div id="status"></div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
