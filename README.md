@@ -2,6 +2,8 @@
 
 **[Live Demo](https://danielcarmingham.github.io/LiquidLightShow/)**
 
+![Liquid Light Show Preview](preview.gif)
+
 A web-based recreation of [1970s psychedelic liquid light shows](./liquid-lightshow-description.md) — those mesmerizing concert visuals created with overhead projectors, colored oils, and glass dishes.
 
 This app simulates swirling, iridescent fluid patterns using GPU-accelerated fluid dynamics and thin-film interference shaders, with optional audio reactivity via your microphone.
